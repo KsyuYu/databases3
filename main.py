@@ -21,10 +21,11 @@ print("Вивести країни та загальну кількість за
 сountries1 = []
 values1 = []
 query1 = '''
-    Countries.country,
-    Countries.total_cases
+SELECT
+    Total.country,
+    Total.total_cases
  FROM
-    Countries
+    Total
 ORDER BY
     total_cases DESC
 '''
@@ -42,14 +43,14 @@ print("\nВивести країну та % зареєстрованих у ні
 values2 = []
 query2 = '''
 SELECT
-  Countries.country,
-	round((Countries.total_cases + 0.0) * 100 / t.total, 2) as persent
+    Total.country,
+	round((Total.total_cases + 0.0) * 100 / t.total, 2) as persent
 FROM
-    Countries,
+    Total,
     (SELECT
-        SUM(Countries.total_cases) AS total
+        SUM(Total.total_cases) AS total
      FROM
-        Countries
+        Total
     ) t
 '''
 
@@ -67,10 +68,10 @@ cases = []
 deaths = []
 query3 = '''
  SELECT
-    Cases.total_cases,
-    Cases.total_deaths
+    Total.total_cases,
+    Total.total_deaths
  FROM
-    Cases
+    Total
 ORDER BY
     total_cases DESC
 '''
