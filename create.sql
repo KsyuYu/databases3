@@ -1,4 +1,4 @@
-CREATE TABLE Contries (
+CREATE TABLE Countries (
     country VARCHAR(30) NOT NULL
     );
 
