@@ -4,7 +4,7 @@ CREATE TABLE Contries (
 
 CREATE TABLE TotalCases (
     country VARCHAR(30) NOT NULL
-    ,total_cases INT NOT NULL REFERENCES Rank (total_cases)
+    ,total_cases INT NOT NULL
     ,new_cases INT NOT NULL
     );
 
