@@ -1,3 +1,7 @@
+CREATE TABLE Contries (
+    country VARCHAR(30) NOT NULL
+    );
+
 CREATE TABLE TotalCases (
     country VARCHAR(30) NOT NULL
     ,total_cases INT NOT NULL REFERENCES Rank (total_cases)
@@ -10,5 +14,6 @@ CREATE TABLE TotalDeaths (
     ,new_deaths INT NOT NULL
     );
 
+ALTER TABLE Contries ADD CONSTRAINT Contries_PK PRIMARY KEY (country);
 ALTER TABLE TotalCases ADD CONSTRAINT TotalCases_PK PRIMARY KEY (country);
 ALTER TABLE TotalDeaths ADD CONSTRAINT TotalDeaths_PK PRIMARY KEY (country);
