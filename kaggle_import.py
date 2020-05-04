@@ -19,12 +19,10 @@ with open(filename, newline='') as file:
         total_deaths = el[3]
         new_deaths = el[4]
 
-        try:
-            insert_query_country = '''INSERT INTO Contries (country)
-                        VALUES (:country)'''
-            cursor.execute(insert_query_country, country=country)
-        except:
-            print('already in database')
+        insert_query_country = '''INSERT INTO Countries (country)
+                    VALUES (:country)'''
+        cursor.execute(insert_query_country, country=country)
+
 
         insert_query_cases = '''INSERT INTO TotalCases (country, total_cases, new_cases )
                     VALUES (:country, :total_cases, :new_cases )'''
@@ -38,3 +36,18 @@ with open(filename, newline='') as file:
     connection.commit()
     cursor.close()
     connection.close()
+
+
+# import csv
+# filename = 'WorldometerDataset1.csv'
+# new_file = 'WorldometerDataset.csv'
+# with open(filename, newline='') as file:
+#     with open(new_file, 'w', newline='') as n_file:
+#         reader=csv.reader(file)
+#         for el in reader:
+#             st = ''
+#             for element in el:
+#                 element = element.replace(',', '')
+#                 st = st+element+','
+#             st=st+'\n'
+#             n_file.write(st)
