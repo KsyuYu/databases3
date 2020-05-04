@@ -7,4 +7,4 @@ CREATE OR REPLACE VIEW Total AS
         TotalDeaths.new_deaths
     FROM
         TotalCases JOIN TotalDeaths
-        ON TotalCases.country = TotalCases.country;
+        ON TotalCases.country = TotalDeaths.country;
