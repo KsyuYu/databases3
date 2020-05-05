@@ -36,18 +36,3 @@ with open(filename, newline='') as file:
     connection.commit()
     cursor.close()
     connection.close()
-
-
-# import csv
-# filename = 'WorldometerDataset1.csv'
-# new_file = 'WorldometerDataset.csv'
-# with open(filename, newline='') as file:
-#     with open(new_file, 'w', newline='') as n_file:
-#         reader=csv.reader(file)
-#         for el in reader:
-#             st = ''
-#             for element in el:
-#                 element = element.replace(',', '')
-#                 st = st+element+','
-#             st=st+'\n'
-#             n_file.write(st)
